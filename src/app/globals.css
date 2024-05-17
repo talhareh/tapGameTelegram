@@ -2,29 +2,250 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
+
+
+.background {
+  background: linear-gradient(180deg, #350000, #BD0303);
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
+.game-container-main {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.footer-area {
+  position: absolute;
+  bottom: 0;
+  display: flex;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  margin-bottom: 30px;
+  height: 65px;
+  align-items: center;
+}
+
+.footer-area .center {
+  display: flex;
+  width: 100%;
+  padding: 0 40px;
+}
+
+.footer-area .center ul {
+  display: flex;
+  margin: 0;
+  width: 100%;
+  justify-content: center;
+  border: 1px solid #000000;
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.footer-area .center ul li {
+  list-style: none;
+  width: 100%;
+}
+
+li {}
+
+.footer-area .center ul li .bar-btn {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  color: #fff;
+  padding: 10px 0;
+  cursor: pointer;
+}
+
+.footer-area .center ul li .bar-btn.active {
+  background-color: #350000;
+  
+}
+
+.game-container-main .game-content {
+  max-width: 480px;
+  position: relative;
+  height: 100%;
+  width: 100%;
+}
+
+.footer-area .center ul li .bar-btn span {
+  font-size: 13px;
+}
+
+.total-score {
+  display: flex;
+  color: #fff;
+  align-items: center;
+  gap: 20px;
+  justify-content: center;
+  margin-top: 70px;
+  margin-bottom: 20px;
+}
+
+.total-score  .totaltaps {}
+
+.total-score  .totaltaps span {
+  font-size: 47px;
+  font-weight: bolder;
+}
+
+.total-score .coin {
+  margin-top: 1px;
+  width: 51px;
+}
+
+.game-container-main .game-content .league {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.game-container-main .game-content .league .center {
+  display: flex;
+  align-items: center;
+}
+
+.game-container-main .game-content .league .center span {
+  color: #fff;
+  font-size: 19px;
+}
+
+.task-area {
+  position: absolute;
+  bottom: 100px;
+  left: 0;
+  right: 0;
+  justify-content: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.task-area .center {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  width: 100%;
+  justify-content: center;
+}
+
+.task-area .center .task-number {
+  color: #fff;
+  font-size: 31px;
+  font-weight: 600;
+}
+
+.task-area .center .progressbar {width: 100%;height: 20px;position: relative;border-radius: 30px;overflow: hidden;margin: 10px 40px 0px;}
+
+.task-area .center .progressbar .bg {background: #E3B645;width: 100%;height: 100%;}
+
+.task-area .center .progressbar .fg {
+  background: #F8EA98;
+  width: 0%;
+  height: 100%;
+}
+
+.monkeyface {
+  margin-top: 30px;
+  display: flex;
+  justify-content: center;
+}
+
+.monkeyface img {
+  width: 100%;
+}
+
+.total-score .coin img {
+  width: 100%;
+}
+
+.monkeyface > div {
+  width: 70%;
+}
+
+#target {
+  height: calc(100vh - 400px);
+}
+
+@keyframes shake {
+  0% { transform: translateX(0); }
+  25% { transform: translateX(-10px); }
+  50% { transform: translateX(10px); }
+  75% { transform: translateX(-10px); }
+  100% { transform: translateX(0); }
+}
+
+.shake-image {
+  animation: shake 0.5s ease-in-out infinite; /* Adjust animation duration as needed */
+}
+
+
+.comming-soon {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100vh - 130px);
+}
+
+
+.task-area .center.flex {
+    justify-content: space-between;
+    padding: 0 40px;
+}
+
+
+.task-area .center.flex .over-all-taps-user span {
+    font-size: 31px;
+    color: #fff;
+    font-weight: 600;
+}
+
+
+/* HTML: <div class="loader"></div> */
+.loader {
+  width: 65px;
+  height: 30px;
+  position: relative;
+}
+.loader:before {
+  content: "";
+  position: absolute;
+  border-radius: 50px;
+  box-shadow: 0 0 0 3px inset #fff;
+  animation: l3 0.75s infinite alternate;
+}
+@keyframes l3 {
+  0% {
+    inset: 0 35px 0 0;
+  }
+  50% {
+    inset: 0 0 0 0;
+  }
+  100% {
+    inset: 0 0 0 35px;
   }
 }
 
-body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+@media (prefers-color-scheme: dark) {
+  
 }
+
 
 @layer utilities {
   .text-balance {

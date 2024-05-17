@@ -9,6 +9,7 @@ export default function Home() {
 
   return (
     <>
+      {/* Suspense Added  */}
       <Suspense fallback={ <LoadingGame/>}>
         <Game />
       </Suspense>

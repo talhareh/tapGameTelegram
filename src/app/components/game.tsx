@@ -130,7 +130,8 @@ const Game = () => {
                                     <Image src="/images/60431e202a46dba633eba7af437ff90f.png" width={100} height={100} alt="" />
                                 </div>
                                 <div className="totaltaps">
-                                    <span id="overalltaps">{mainStore.overAllTaps.toLocaleString()}</span>
+                                    <span id="overalltaps">{mainStore.overAllTapsByUser.toLocaleString()}</span>
+                                    {/* <span id="overalltaps">{mainStore.overAllTaps.toLocaleString()}</span> */}
                                 </div>
                             </div>
                             <div className="league">
@@ -147,7 +148,7 @@ const Game = () => {
 
                                 <div className="task-area ">
                                     <div className="center flex space-between gap-5">
-                                        <div className="flex">
+                                        <div className="flex justify-center">
                                             <div className="icon">
                                                 <Image src="/images/current-svg.png" width={27} height={43} alt="" />
                                             </div>
@@ -157,9 +158,9 @@ const Game = () => {
                                                 <span className="task_total_target" id="task_total_target">{mainStore.targetTaps.toLocaleString()}</span>
                                             </div>
                                         </div>
-                                        <div className="flex over-all-taps-user">
+                                       {/*  <div className="flex over-all-taps-user">
                                          <span>{mainStore.overAllTapsByUser.toLocaleString()}</span>
-                                        </div>
+                                        </div> */}
                                     </div>
                                     <div className="center">
                                     <ProgressBar progress={calculatePer()}/>

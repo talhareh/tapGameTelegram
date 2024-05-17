@@ -8,12 +8,14 @@ import { useMainStore } from "@/zustand/mainStore";
 import axios from "axios";
 import { useRouter, useSearchParams  } from "next/navigation";
 import moment from "moment";
+import LoadingGame from "./LoadingGame";
 
 const Game = () => {
     const router = useRouter();
     const searchParams = useSearchParams()
     const userId = searchParams.get('userid')
 
+    const [loading, setIsLoading] = useState<boolean>(true);
     const [user, setUser] = useState<any | null>({});
     const [tab, setTab] = useState('earn');
     const [league, setLeague] = useState('bronze');
@@ -64,6 +66,7 @@ const Game = () => {
             getTodayTaps(response.data.user._id);
             response.data.totalTaps && mainStore.setOverAllTapsByUser(response.data.totalTaps);
             response.data.overAllTaps && mainStore.setOverAllTaps(response.data.overAllTaps);
+            setIsLoading(false);
             // Handle success or navigate to another page
           } catch (error) {
             console.error('Error creating user:', error);
@@ -105,10 +108,19 @@ const Game = () => {
     // eslint-disable-next-line react-hooks/exhaustive-deps
     }, [userId])
 
+    if(loading){
+        return <LoadingGame/>
+    }
 
     return (
         <div id="game-container">
             <div className="background"></div>
+            {!userId && 
+                <div className="user-not-connected">
+                    <h3>User is not connected</h3>
+                </div>
+            }
+            {userId &&
             <div className="game-container-main">
                 <div className="game-content">
                     {tab == 'earn' && 
@@ -193,6 +205,7 @@ const Game = () => {
                     </div>
                 </div>
             </div> 
+            }
         </div>
     )
 }

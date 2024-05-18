@@ -37,16 +37,8 @@ export async function POST(req: Request, res: NextApiResponse) {
         outUser = await usersCollection.findOne({_id: result.insertedId})
       }
       
-      
-      let totalTaps = 0;
-      let overAllTaps = 0;
-      if(outUser) totalTaps = await getTotalTapsByUserId(outUser._id.toString())
-      if(outUser) overAllTaps = await getTotalTaps()
-
       return NextResponse.json({
-        user: outUser,
-        totalTaps,
-        overAllTaps,
+        user: outUser
       },{ status: 200 });
       
     } catch (error) {

@@ -48,31 +48,13 @@ export async function POST(req: Request, res: NextApiResponse) {
     const data = await req.json();
     const client = await clientPromise;
     const db = client.db(); 
-    const tapsCollection = db.collection<Tap>('taps');
+    const usersCollection = db.collection<User>('users');
 
-    let outTaps = await tapsCollection.findOne({userId: data.userId, date: data.date})
-    if(!outTaps){
-      const newTap: Tap = {
-        _id: new ObjectId(),
-        userId: data.userId,
-        date: data.date,
-        taps: data.taps,
-      };
-      const result = await tapsCollection.insertOne(newTap);
-      outTaps = await tapsCollection.findOne({_id: result.insertedId})
-    }else{
-      if(data.taps) await tapsCollection.findOneAndUpdate({userId: data.userId, date: data.date}, { $set: { taps: data.taps } });
-      outTaps = await tapsCollection.findOne({userId: data.userId, date: data.date})
-    }
-
-    const totalTaps = await getTotalTapsByUserId(data.userId)
-    const overAllTaps = await getTotalTaps()
+    if(data.taps) await usersCollection.findOneAndUpdate({_id: new ObjectId(data.userId)}, { $inc: { totalTaps: data.taps } });
+    const userData = await usersCollection.findOne({_id: new ObjectId(data.userId)})
 
     return NextResponse.json({
-      success: outTaps ? true : false,
-      taps: outTaps,
-      totalTaps,
-      overAllTaps,
+      user: userData
     },{ status: 200 });
     
   } catch (error) {

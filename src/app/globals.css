@@ -158,6 +158,8 @@ li {}
   background: #F8EA98;
   width: 0%;
   height: 100%;
+  position: absolute;
+  right: 0;
 }
 
 .monkeyface {
@@ -253,6 +255,168 @@ li {}
   position: absolute;
   left: 0;
   right: 0;
+}
+
+
+.bouns-show {}
+
+.bonus-heading {
+    display: flex;
+    justify-content: center;
+    margin-top: 70px;
+}
+
+.bouns-show {
+    display: flex;
+    align-items: center;
+    color: #fff;
+    border: 3px solid #ddd;
+    border-radius: 40px;
+    padding: 10px 20px;
+    background: #d6c19959;
+}
+
+.bouns-show span {
+    font-size: 26px;
+    font-weight: 600;
+}
+
+.heading-2 {
+  text-align: center;
+  margin: 40px;
+  font-size: 24px;
+  color: #fff;
+}
+
+
+.heading-2 {
+  text-align: center;
+  margin: 40px;
+  font-size: 24px;
+  color: #fff;
+}
+
+.bouns-show {
+  position: relative;
+}
+
+.bouns-show span.x-b {
+  position: absolute;
+  top: 1px;
+  left: -70px;
+  background: #000000;
+  border-radius: 100px;
+  width: 60px;
+  height: 60px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border: 3px solid #fff;
+  text-transform: uppercase;
+}
+
+.bouns-show h4 {
+  font-size: 25px;
+}
+
+.ref-button {
+  display: flex;
+  justify-content: center;
+}
+
+.ref-button button {
+  background: #dcb52d;
+  border: 3px solid #ddd;
+  padding: 10px 20px;
+  border-radius: 50px;
+  width: 100%;
+  font-size: 23px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.ref-area {
+  overflow-x: hidden;
+  position: absolute;
+  left: 0;
+  right: 0;
+  overflow: hidden;
+  bottom: 120px;
+  overflow-y: auto;
+  top: 30px;
+  padding: 0 20px;
+}
+
+.ref-area h1 {
+  margin-top: 50px;
+  font-size: 30px;
+  color: #fff;
+}
+
+.ref-area .invited-frieds-list, .ref-area .bonus-frieds-list {
+  border: 1px solid;
+  border-radius: 10px;
+  padding: 20px;
+  margin-top: 10px;
+  background: #1919194a;
+  margin-bottom: 40px;
+}
+
+.ref-area .invited-frieds-list li {
+  margin-bottom: 10px;
+  padding: 10px;
+  border-bottom: 1px solid #ddd;
+  color: #fff;
+}
+
+.ref-area .bonus-frieds-list li {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 10px;
+  align-items: center;
+  color:#fff;
+  border-bottom: 1px solid #fff;
+  padding-bottom: 10px;
+}
+
+.ref-area p {
+  color: #fff;
+}
+
+.ref-area .bonus-frieds-list li .boun {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  border: 1px solid;
+  background: #000000;
+  border-radius: 10px;
+  padding: 4px 10px;
+  color:#fff
+}
+
+
+/* Handle on hover */
+.ref-area::-moz-scrollbar-thumb:hover {
+  background: #555; /* Color of the scrollbar handle on hover */
+}
+
+::-webkit-scrollbar {
+  width: 0px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: #888;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
 }
 
 @media (prefers-color-scheme: dark) {

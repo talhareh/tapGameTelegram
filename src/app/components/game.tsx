@@ -20,7 +20,7 @@ const Game = () => {
 
     const [loading, setIsLoading] = useState<boolean>(true);
     const [user, setUser] = useState<any | null>({});
-    const [tab, setTab] = useState('referal');
+    const [tab, setTab] = useState('earn');
     const [league, setLeague] = useState('bronze');
     const [isShaking, setIsShaking] = useState(false);
     const [timerId, setTimerId] = useState<any | null>(null); // State to store timerId

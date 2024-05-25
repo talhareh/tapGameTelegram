@@ -27,11 +27,11 @@ const Game = () => {
     const [updateTapsTimerId, setUpdateTapsTimerId] = useState<any | null>(null); // State to store timerId
     const [timer, setTimer] = useState<any | null>(null); // State to store timerId
 
-    const target = 100;
+    const target = 1000;
 
     const [overAllTaps , setOverAllTaps] = useState(0);
     const cTaps = Cookies.get('taps');
-    const [taps , setTaps] = useState(cTaps ? parseInt(cTaps) : 0);
+    const [taps , setTaps] = useState(cTaps ? parseInt(cTaps) : 1000);
 
     const mainStore = useMainStore();
     
@@ -60,6 +60,7 @@ const Game = () => {
     }
 
     useEffect(() => {
+        
         if (taps >= target) {
             clearInterval(timer);
             setTimer(null);
@@ -82,8 +83,10 @@ const Game = () => {
     }
 
     useEffect(() => {
+        console.log("in cookies set useEffect")
         let lastVisitTime = Cookies.get('lastVisitTime');
         let cookieTaps = Cookies.get('taps');
+        console.log("lastTime" , lastVisitTime)
         if(lastVisitTime){
             const currentTime = new Date().getTime();
             const differenceInSeconds = Math.floor((currentTime - parseInt(lastVisitTime)) / 1000);
@@ -92,7 +95,7 @@ const Game = () => {
             if(cookieTaps) currentCookieTaps = parseInt(cookieTaps);
             currentCookieTaps = differenceInSeconds + currentCookieTaps
             if(currentCookieTaps > target){
-                currentCookieTaps = 100;
+                currentCookieTaps = 1000;
             }
 
             console.log('currentCookieTaps',currentCookieTaps);
@@ -225,7 +228,12 @@ const Game = () => {
 
                     {(tab == 'referal') && 
                         <>
-                           <Referal />
+                           {/* <Referal /> */}
+                           <div className="comming-soon">
+                                <div className="img-center">
+                                    <Image src="/images/comming-soon.png" width={350} height={350} alt="" />
+                                </div>
+                            </div>
                         </>
                     }
                     

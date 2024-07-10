@@ -5,12 +5,13 @@
 
 
 .background {
-  background: linear-gradient(180deg, #350000, #BD0303);
+  background: linear-gradient(180deg, #F8922A, #f7d2ae);
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
   top: 0;
+  
 }
 
 .game-container-main {
@@ -185,10 +186,10 @@ li {}
 }
 
 @keyframes shake {
-  0% { transform: translateX(0); }
-  25% { transform: translateX(-10px); }
+  0% { transform: translateX(0);}
+  /* 25% { transform: translateX(-10px); } */
   50% { transform: translateX(10px); }
-  75% { transform: translateX(-10px); }
+  /* 75% { transform: translateX(-10px); } */
   100% { transform: translateX(0); }
 }
 

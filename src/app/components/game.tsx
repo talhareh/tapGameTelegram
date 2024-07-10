@@ -188,9 +188,11 @@ const Game = () => {
                             <div id="target" onClick={handleTap}>
                                 <div className="monkeyface" >
                                     <div className={isShaking ? 'shake-image' : ''} id="monkeyfaceimage">
-                                        <Image src="/images/38571a7fa809aae955a5a443f5cdecbf.png" width={200} height={200} alt="" />
+                                        <Image src="/images/fan.webp" width={250} height={250} alt="" />
                                     </div>
                                 </div>
+
+                                
 
                                 <div className="task-area ">
                                     <div className="center flex space-between gap-5">
@@ -198,19 +200,19 @@ const Game = () => {
                                             <div className="icon">
                                                 <Image src="/images/current-svg.png" width={27} height={43} alt="" />
                                             </div>
-                                            <div className="task-number flex gap-2">
+                                            {/* <div className="task-number flex gap-2">
                                                 <span className="task_completed_target" id="score-value">{taps.toLocaleString()}</span>
                                                 <span>/</span>
                                                 <span className="task_total_target" id="task_total_target">{target.toLocaleString()}</span>
-                                            </div>
+                                            </div> */}
                                         </div>
                                        {/*  <div className="flex over-all-taps-user">
                                          <span>{mainStore.overAllTapsByUser.toLocaleString()}</span>
                                         </div> */}
                                     </div>
-                                    <div className="center">
+                                    {/* <div className="center">
                                     <ProgressBar progress={calculatePer()}/>
-                                    </div>
+                                    </div> */}
                                 </div>
                             </div>
                         </>
@@ -249,7 +251,7 @@ const Game = () => {
                                 <li>
                                     <div className={`bar-btn ${tab == 'boost' ? 'active' : ''}`} onClick={() => setTab('boost')}>
                                         <div><Image src="/images/boost.png" width={25} height={25} alt="" /></div>
-                                        <span>Boost</span>                                        
+                                        <span>Buy</span>                                        
                                     </div>
                                 </li>
                                 <li>

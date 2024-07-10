@@ -7,9 +7,9 @@ export const useMainStore = create(
             {
                 access_token: '' as string ,
                 user: {} as any ,
-                todayTaps: 100 as number ,
-                targetTaps: 100 as number ,
-                overAllTapsByUser: 0 as number ,
+                todayTaps: 1000 as number ,
+                targetTaps: 1000 as number ,
+                overAllTapsByUser: 0 as number,
                 overAllTaps: 0 as number ,
                 appLoaderText: '' as string ,
                 appLoader: false as boolean ,

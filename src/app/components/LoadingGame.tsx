@@ -14,7 +14,7 @@ const LoadingGame =  () => {
                 }}>
                     <div className="monkeyface" >
                         <div  id="monkeyfaceimage">
-                            <Image src="/images/38571a7fa809aae955a5a443f5cdecbf.png" width={300} height={300} alt="" />
+                            <Image src="/images/fan.webp" width={300} height={300} alt="" />
                         </div>
                     </div>
                     <div className="loader"></div>
